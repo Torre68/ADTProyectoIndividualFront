@@ -1,0 +1,27 @@
+<h1 class="display-1" style="text-align: center; color: rgb(229, 239, 231);"><b>ORDENADORES DISPONIBLES</b></h1>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th><input type="button" class="btn btn primary" value="Número De Serie" (click)="buscarOrdenados('numserie', 'ASC')"></th>
+            <th><input type="button" class="btn btn primary" value="Marca" (click)="buscarOrdenados('marca', 'ASC')"></th>
+            <th><input type="button" class="btn btn primary" value="Modelo" (click)="buscarOrdenados('modelo', 'ASC')"></th>
+            <th><input type="button" class="btn btn primary" value="Precio" (click)="buscarOrdenados('precio', 'ASC')"></th>
+        </tr>
+    </thead>
+    <tbody>
+@for (ordenador of listaOrdenador; track ordenador.numserie){
+    <tr>
+    <td>{{ordenador.numserie}} </td>
+    <td>{{ordenador.marca}}</td>
+    <td>{{ordenador.modelo}}</td>
+    <td>{{ordenador.precio}}</td>
+    <td><input type="button" class="btn btn-danger" value="Borrar" (click)="borrar(ordenador.numserie)"></td>
+
+    
+</tr>
+}
+</tbody>
+</table>
+
+<a routerLink="/formularioejemplar">Ir a formulario</a>
